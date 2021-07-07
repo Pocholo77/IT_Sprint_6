@@ -1,6 +1,6 @@
 [
-    "El nostre heroi estava surant per l'espai sideral quan a la llunyania va albirar una nau espacial",
-    "Sentia curiositat per l'interior de la nau i es va posar a inspeccionar-la. Va arribar a una sala amb dues portes.",
-    "L'heroi va decidir travessar la porta que el portava a casa",
-    "Mentrestant, altres heroes no van tenir tanta sort en la seva elecció ..."
+    {"id": 1, "class":"active", "text":"El nostre heroi estava surant per l'espai sideral quan a la llunyania va albirar una nau espacial", "display":true },
+    {"id": 2, "class":"noActive", "text":"Sentia curiositat per l'interior de la nau i es va posar a inspeccionar-la. Va arribar a una sala amb dues portes.", "display":false},
+    {"id": 3, "class":"noActive", "text":"L'heroi va decidir travessar la porta que el portava a casa" , "display":false} ,
+    {"id": 4, "class":"noActive", "text":"Mentrestant, altres heroes no van tenir tanta sort en la seva elecció ...", "display":false}
 ]
