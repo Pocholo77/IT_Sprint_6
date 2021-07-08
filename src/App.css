@@ -3,6 +3,7 @@
 }
 .noActive{
   border: 1px solid black;
+  color: black;
   background-color: white;
   border-radius: 2%/50%;
   height: 3rem;
@@ -14,5 +15,10 @@
   border: 2px solid rgb(216, 10, 10);
   color: red;
   background-color: rgb(223, 134, 134);
+  border-radius: 2%/50%;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
