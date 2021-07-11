@@ -1,6 +1,7 @@
 import "./App.css";
 import Escena from "./components/escena/Escena";
 import React from "react";
+import Welcome from "./components/Welcome";
 
 const textsData = require("./Textos.json");
 
@@ -10,23 +11,34 @@ class App extends React.Component {
     this.state = {
       textos: textsData,
       activeText: 0,
+      displayScreen: true
     };
     this.handleClickUp = this.handleClickUp.bind(this);
     this.handleClickDown = this.handleClickDown.bind(this);
+    this.handleClickWelcome = this.handleClickWelcome.bind(this) 
   }  
+
+  handleClickWelcome(){
+
+    this.setState((prevState) =>{
+      return { 
+        displayScreen: !prevState.displayScreen 
+      }
+    })
+  }
   /* ------------------------------------------------------------------------ Control bajar por el menu */
   updateTextDown(prevState) {
-    //debugger
+
     let textoUpdated = this.state.textos;
     textoUpdated[prevState.activeText].class = "noActive";
     textoUpdated[prevState.activeText - 1].class = "active";
-    //debugger
+    
     return textoUpdated;
   }
 
   handleClickDown() {
-    //console.log(this.state)
     this.setState((prevState) => {
+      
       if (prevState.textos[prevState.activeText].id <= 1) {
         return;
       }
@@ -39,16 +51,16 @@ class App extends React.Component {
   }
  /* ------------------------------------------------------------------------ Control subir por el menu */
   updateTextUp(prevState) {
-    //debugger
+  
     let textoUpdated = this.state.textos;
     textoUpdated[prevState.activeText].class = "noActive";
     textoUpdated[prevState.activeText + 1].class = "active";
-    //debugger
+
     return textoUpdated;
   }
 
   handleClickUp() {
-    //console.log(this.state)
+ 
     this.setState((prevState) => {
       if (prevState.textos[prevState.activeText].id >= 4) {
         return;
@@ -65,8 +77,9 @@ class App extends React.Component {
     const array = this.state.textos.map((text) => {
       return <Escena key={text.id} text={text.text} className={text.class} />;
     });
-
+    
     return (
+      this.state.displayScreen ? <Welcome handleClickWelcome={this.handleClickWelcome}/> : 
       <div className="App">
         <button onClick={this.handleClickDown}> Atras </button>
         <button onClick={this.handleClickUp}> Adelante </button>

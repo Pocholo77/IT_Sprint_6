@@ -21,4 +21,10 @@
   justify-content: center;
   align-items: center;
 }
+.welcomeScreen{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
